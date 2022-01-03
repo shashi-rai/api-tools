@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package v1;
+option go_package = "github.com/shashi-rai/api-tools/pkg/api/v1";
+import "google/protobuf/timestamp.proto";
+
+service ApiService {
+    rpc GetStatus(ApiRequest) returns (ApiReply) {}
+}
+
+message ApiRequest {
+    string name = 1;
+}
+
+message ApiReply {
+    string message = 1;
+}
